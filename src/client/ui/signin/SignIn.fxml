@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.geometry.Insets?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="client.ui.signin.SignInController"
+          alignment="CENTER" hgap="10" vgap="10">
+
+    <padding>
+        <Insets top="25" right="25" bottom="10" left="25"/>
+    </padding>
+
+    <Text text="Welcome!" style="-fx-font: BOLD 23 Consolas;"
+          GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+
+    <Label text="telNumber"
+           GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <TextField fx:id="telNumber"
+               GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+    <Label text="Password"
+           GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <PasswordField fx:id="password"
+               GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+    <HBox spacing="10" GridPane.rowIndex="3" GridPane.columnIndex="1">
+        <Button text="sign up" onAction="#handleSignUpAction"
+                GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <Button text="sign in" onAction="#handleSignInAction"/>
+        <Button text="exit" onAction="#handleExitAction"/>
+    </HBox>
+
+</GridPane>

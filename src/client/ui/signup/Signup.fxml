@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.geometry.Insets?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="client.ui.signup.SignupController"
+          alignment="CENTER" hgap="10" vgap="10">
+
+    <padding>
+        <Insets top="25" right="25" bottom="10" left="25"/>
+    </padding>
+
+    <Text text="Sign Up" style="-fx-font: BOLD 23 Consolas;"
+          GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <Text text="For Client" style="-fx-font: BOLD 23 Consolas;"
+          GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+    <Text text="telNumber"
+          GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <TextField fx:id="telNumber"
+               GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+    <Text text="password"
+          GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <PasswordField fx:id="password"
+                   GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+    <Text text="idCard"
+          GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+    <TextField fx:id="idCard"
+               GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+    <Text text="name"
+          GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+    <TextField fx:id="name"
+               GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+    <Text text="address"
+          GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+    <TextField fx:id="address"
+               GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+    <HBox spacing="10" GridPane.rowIndex="6" GridPane.columnIndex="1">
+        <Button text="sign up" onAction="#handleSignupAction"/>
+        <Button text="back" onAction="#handleFallbackAction"/>
+    </HBox>
+
+</GridPane>
