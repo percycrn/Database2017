@@ -16,29 +16,24 @@
     </padding>
 
     <HBox spacing="10" GridPane.rowIndex="0" GridPane.columnIndex="0">
-        <Text text="Welcome! " style="-fx-font: BOLD 23 Consolas;"/>
-        <Text fx:id="customerName" style="-fx-font: BOLD 15 Consolas;"/>
+        <Text text="Welcome " style="-fx-font: BOLD 23 Consolas;"/>
+        <Text fx:id="customerName" style="-fx-font: BOLD 20 Consolas;"/>
     </HBox>
 
     <HBox spacing="10" GridPane.rowIndex="1" GridPane.columnIndex="0">
         <Button text="customer info" onAction="#customerInformation"/>
-        <Button text="company info" onAction="#companyInformation"/>
-        <ComboBox fx:id="companyList"/>
-        <ComboBox fx:id="routeList"/>
         <Button text="contract info" onAction="#contractInformation"/>
         <Button text="back" onAction="#back"/>
     </HBox>
 
-    <HBox spacing="10" GridPane.rowIndex="1" GridPane.columnIndex="0">
-        <ListView fx:id="contractListView" style="-fx-background-insets: 0;" editable="true" prefHeight="300"
-                  visible="false">
-        </ListView>
-        <ListView fx:id="timePriceView" style="-fx-background-insets: 0;" editable="true" prefHeight="300"
-                  visible="false">
-        </ListView>
-        <ListView fx:id="customerInfoView" style="-fx-background-insets: 0;" editable="true" prefHeight="300"
-                  visible="false">
-        </ListView>
+    <HBox spacing="10" GridPane.rowIndex="2" GridPane.columnIndex="0">
+        <ComboBox fx:id="companyList"/>
+        <ComboBox fx:id="routeList"/>
+        <Button text="more information" onAction="#showTimeAndPrice"/>
+    </HBox>
+
+    <HBox spacing="10" GridPane.rowIndex="3" GridPane.columnIndex="0">
+        <ListView fx:id="messageListView" style="-fx-background-insets: 0;" editable="true" prefHeight="300"/>
     </HBox>
 
 </GridPane>

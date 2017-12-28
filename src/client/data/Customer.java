@@ -7,7 +7,6 @@ public class Customer {
     private String password;
     private String customer_phone;
     private String occupation;
-    private int contract_no;
 
     public String getId_number() {
         return id_number;
@@ -55,13 +54,5 @@ public class Customer {
 
     public void setOccupation(String occupation) {
         this.occupation = occupation;
-    }
-
-    public int getContract_no() {
-        return contract_no;
-    }
-
-    public void setContract_no(int contract_no) {
-        this.contract_no = contract_no;
     }
 }

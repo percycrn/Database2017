@@ -23,27 +23,32 @@
     <TextField fx:id="telNumber"
                GridPane.rowIndex="1" GridPane.columnIndex="1"/>
 
-    <Text text="password"
+    <Text text="name"
           GridPane.rowIndex="2" GridPane.columnIndex="0"/>
-    <PasswordField fx:id="password"
-                   GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+    <TextField fx:id="name"
+               GridPane.rowIndex="2" GridPane.columnIndex="1"/>
 
-    <Text text="idCard"
+    <Text text="sex"
           GridPane.rowIndex="3" GridPane.columnIndex="0"/>
-    <TextField fx:id="idCard"
+    <TextField fx:id="sex"
                GridPane.rowIndex="3" GridPane.columnIndex="1"/>
 
-    <Text text="name"
+    <Text text="idCard"
           GridPane.rowIndex="4" GridPane.columnIndex="0"/>
-    <TextField fx:id="name"
+    <TextField fx:id="idCard"
                GridPane.rowIndex="4" GridPane.columnIndex="1"/>
 
-    <Text text="address"
+    <Text text="password"
           GridPane.rowIndex="5" GridPane.columnIndex="0"/>
-    <TextField fx:id="address"
-               GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+    <PasswordField fx:id="password"
+                   GridPane.rowIndex="5" GridPane.columnIndex="1"/>
 
-    <HBox spacing="10" GridPane.rowIndex="6" GridPane.columnIndex="1">
+    <Text text="occupation"
+          GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+    <TextField fx:id="occupation"
+               GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+    <HBox spacing="10" GridPane.rowIndex="7" GridPane.columnIndex="1">
         <Button text="sign up" onAction="#handleSignupAction"/>
         <Button text="back" onAction="#handleFallbackAction"/>
     </HBox>

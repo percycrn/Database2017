@@ -6,10 +6,9 @@ public class Route {
     private int route_no;
     private Date time;
     private String server_level;
-    private float price;
     private String place;
     private String traffic;
-    private int company_no;
+    private String company_no;
     private String route_name;
 
     public int getRoute_no() {
@@ -36,14 +35,6 @@ public class Route {
         this.server_level = server_level;
     }
 
-    public float getPrice() {
-        return price;
-    }
-
-    public void setPrice(float price) {
-        this.price = price;
-    }
-
     public String getPlace() {
         return place;
     }
@@ -60,11 +51,11 @@ public class Route {
         this.traffic = traffic;
     }
 
-    public int getCompany_no() {
+    public String getCompany_no() {
         return company_no;
     }
 
-    public void setCompany_no(int company_no) {
+    public void setCompany_no(String company_no) {
         this.company_no = company_no;
     }
 

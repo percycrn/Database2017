@@ -31,13 +31,15 @@ public class SignInController extends ManageClient implements Initializable {
                 JOptionPane.showMessageDialog(null, "account doesn't exits");
             } else if (!connDB.checkPassword(telNumber.getText(), password.getText())) {
                 JOptionPane.showMessageDialog(null, "password is incorrect");
-            } else {
+            } else if (telNumber.getText().equals("admin")&&password.getText().equals("admin")){
+
+            }else {
                 customer = connDB.getCustomerInfo(telNumber.getText());
                 customerInfoList.add("telephone number: " + customer.getCustomers_phone());
                 customerInfoList.add("id card: " + customer.getId_number());
                 customerInfoList.add("name: " + customer.getName());
                 customerInfoList.add("sex: " + customer.getSex());
-                customerInfoList.add("occupation" + customer.getOccupation());
+                customerInfoList.add("occupation: " + customer.getOccupation());
                 Select select = new Select();
                 select.init();
                 select.start(ClientStart.getStage());

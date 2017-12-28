@@ -1,11 +1,77 @@
 package client.data;
 
+import java.util.Date;
+
 public class Contract {
     private int contract_no;
     private String customer_phone;
     private String guide_no;
     private int route_no;
     private int insurance_no;
+    private String route_name;
+    private String route_place;
+    private String traffic;
+    private String guide_name;
+    private Date date;
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    private int price_travel;
+    private int price_insurance;
+
+    public String getRoute_name() {
+        return route_name;
+    }
+
+    public void setRoute_name(String route_name) {
+        this.route_name = route_name;
+    }
+
+    public String getRoute_place() {
+        return route_place;
+    }
+
+    public void setRoute_place(String route_place) {
+        this.route_place = route_place;
+    }
+
+    public String getTraffic() {
+        return traffic;
+    }
+
+    public void setTraffic(String traffic) {
+        this.traffic = traffic;
+    }
+
+    public String getGuide_name() {
+        return guide_name;
+    }
+
+    public void setGuide_name(String guide_name) {
+        this.guide_name = guide_name;
+    }
+
+    public int getPrice_travel() {
+        return price_travel;
+    }
+
+    public void setPrice_travel(int price_travel) {
+        this.price_travel = price_travel;
+    }
+
+    public int getPrice_insurance() {
+        return price_insurance;
+    }
+
+    public void setPrice_insurance(int price_insurance) {
+        this.price_insurance = price_insurance;
+    }
 
     public int getContract_no() {
         return contract_no;

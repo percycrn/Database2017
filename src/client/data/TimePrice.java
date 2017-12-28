@@ -5,6 +5,15 @@ import java.util.Date;
 public class TimePrice {
     private Date date;
     private int price;
+    private String guide_name;
+
+    public String getGuide_name() {
+        return guide_name;
+    }
+
+    public void setGuide_name(String guide_name) {
+        this.guide_name = guide_name;
+    }
 
     public Date getDate() {
         return date;
