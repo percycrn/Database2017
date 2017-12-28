@@ -1,42 +1,20 @@
 package client.data;
 
 public class Customer {
-    private String telNumber;
-    private String password;
-    private String idCard;
+    private String id_number;
     private String name;
-    private String address;
+    private String sex;
+    private String password;
+    private String customer_phone;
+    private String occupation;
+    private int contract_no;
 
-    public Customer(String telNumber, String password, String idCard, String name, String address) {
-        this.telNumber = telNumber;
-        this.password = password;
-        this.idCard = idCard;
-        this.name = name;
-        this.address = address;
+    public String getId_number() {
+        return id_number;
     }
 
-    public String getTelNumber() {
-        return telNumber;
-    }
-
-    public void setTelNumber(String telNumber) {
-        this.telNumber = telNumber;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getIdCard() {
-        return idCard;
-    }
-
-    public void setIdCard(String idCard) {
-        this.idCard = idCard;
+    public void setId_number(String id_number) {
+        this.id_number = id_number;
     }
 
     public String getName() {
@@ -47,11 +25,43 @@ public class Customer {
         this.name = name;
     }
 
-    public String getAddress() {
-        return address;
+    public String getSex() {
+        return sex;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getCustomers_phone() {
+        return customer_phone;
+    }
+
+    public void setCustomers_phone(String customers_phone) {
+        this.customer_phone = customers_phone;
+    }
+
+    public String getOccupation() {
+        return occupation;
+    }
+
+    public void setOccupation(String occupation) {
+        this.occupation = occupation;
+    }
+
+    public int getContract_no() {
+        return contract_no;
+    }
+
+    public void setContract_no(int contract_no) {
+        this.contract_no = contract_no;
     }
 }
