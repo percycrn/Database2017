@@ -1,7 +1,7 @@
 package client.ui.signin;
 
 import client.ClientStart;
-import client.ui.manage.Manage;
+import client.ui.manage.manager.Manager;
 import client.ui.signup.Signup;
 import client.ui.select.Select;
 import client.util.ManageClient;
@@ -30,19 +30,19 @@ public class SignInController extends ManageClient implements Initializable {
             return;
         }
         try {
-            if (!connDB.accountExist(telNumber.getText())) {
-                JOptionPane.showMessageDialog(null, "account doesn't exits");
-            } else if (!connDB.checkPassword(telNumber.getText(), password.getText())) {
-                JOptionPane.showMessageDialog(null, "password is incorrect");
-            } else if (telNumber.getText().equals("admin") && password.getText().equals("admin")) {
-                Manage manage = new Manage();
+            if (telNumber.getText().equals("admin") && password.getText().equals("admin")) {
+                Manager manage = new Manager();
                 try {
                     manage.init();
                     manage.start(ClientStart.getStage());
                 } catch (Exception e) {
                     e.printStackTrace();
-                    System.out.println("fail to go to manage interface");
+                    System.out.println("fail to go to ManageManage interface");
                 }
+            } else if (!connDB.accountExist(telNumber.getText())) {
+                JOptionPane.showMessageDialog(null, "account doesn't exits");
+            } else if (!connDB.checkPassword(telNumber.getText(), password.getText())) {
+                JOptionPane.showMessageDialog(null, "password is incorrect");
             } else {
                 customer = connDB.getCustomer(telNumber.getText());
                 Select select = new Select();

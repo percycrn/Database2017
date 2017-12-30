@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="client.ui.manage.time_price.TimePriceController"
+          alignment="CENTER" hgap="10" vgap="10">
+
+    <padding>
+        <Insets top="25" right="25" bottom="10" left="25"/>
+    </padding>
+
+    <Text text="Add New" style="-fx-font: BOLD 23 Consolas;"
+          GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <Text text="time arrangement" style="-fx-font: BOLD 23 Consolas;"
+          GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+    <Label text="company" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="subsidiaryListBox" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+    <Label text="route" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="routeListBox" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+    <Label text="start time" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+    <TextField fx:id="startTime" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+    <Label text="end time" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+    <TextField fx:id="endTime" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+    <Label text="price" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+    <TextField fx:id="price" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+    <Label text="server level" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+    <TextField fx:id="serverLevel" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+    <Label text="guide name" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+    <TextField fx:id="guide_name" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+    <HBox spacing="10" GridPane.rowIndex="8" GridPane.columnIndex="1">
+        <Button text="submit" onAction="#addTimePrice"/>
+        <Button text="back" onAction="#back"/>
+    </HBox>
+
+</GridPane>

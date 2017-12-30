@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="client.ui.manage.spot.SpotController"
+          alignment="CENTER" hgap="10" vgap="10">
+
+    <padding>
+        <Insets top="25" right="25" bottom="10" left="25"/>
+    </padding>
+
+    <Text text="Add New" style="-fx-font: BOLD 23 Consolas;"
+          GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <Text text="Spot" style="-fx-font: BOLD 23 Consolas;"
+          GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+    <Label text="spot name" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <TextField fx:id="spot_name" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+    <HBox spacing="10" GridPane.rowIndex="2" GridPane.columnIndex="1">
+        <Button text="submit" onAction="#addSpot"/>
+        <Button text="back" onAction="#back"/>
+    </HBox>
+
+</GridPane>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="client.ui.manage.route.RouteController"
+          alignment="CENTER" hgap="10" vgap="10">
+
+    <padding>
+        <Insets top="25" right="25" bottom="10" left="25"/>
+    </padding>
+
+    <Text text="Add New" style="-fx-font: BOLD 23 Consolas;"
+          GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <Text text="Route" style="-fx-font: BOLD 23 Consolas;"
+          GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+    <Label text="route name" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <TextField fx:id="route_name" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+    <Label text="spot" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <TextField fx:id="route_spot" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+    <Label text="averagePrice" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+    <TextField fx:id="averagePrice" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+    <Label text="traffic" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+    <TextField fx:id="traffic" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+    <Label text="subsidiary" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="subsidiaryListBox" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+    <HBox spacing="10" GridPane.rowIndex="6" GridPane.columnIndex="1">
+        <Button text="submit" onAction="#addRoute"/>
+        <Button text="back" onAction="#back"/>
+    </HBox>
+
+</GridPane>

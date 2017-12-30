@@ -6,12 +6,11 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.ToggleButton?>
-<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Label?>
 <GridPane xmlns="http://javafx.com/javafx"
           xmlns:fx="http://javafx.com/fxml"
           fx:controller="client.ui.select.SelectController"
-          alignment="CENTER" hgap="10" vgap="10">
+          hgap="10" vgap="10">
 
     <padding>
         <Insets top="25" right="25" bottom="10" left="25"/>
@@ -22,28 +21,35 @@
         <Text fx:id="customerName" style="-fx-font: BOLD 20 Consolas;"/>
     </HBox>
 
-    <HBox spacing="10" GridPane.rowIndex="1" GridPane.columnIndex="0">
-        <Button text="customer info" onAction="#customerInformation"/>
-        <Button text="contract info" onAction="#contractInformation"/>
-    </HBox>
+    <ListView fx:id="messageListView" style="-fx-background-insets: 0;" editable="true" prefHeight="300"
+              GridPane.rowIndex="1" GridPane.columnIndex="0"/>
 
-    <HBox spacing="10" GridPane.rowIndex="2" GridPane.columnIndex="0">
+    <VBox spacing="10" GridPane.rowIndex="1" GridPane.columnIndex="1">
+        <Label text="Your profile" style="-fx-font: 18 Consolas;"/>
+        <HBox spacing="10">
+            <Button text="customer info" onAction="#customerInformation"/>
+            <Button text="contract info" onAction="#contractInformation"/>
+            <Button text="fallback" onAction="#back"/>
+        </HBox>
+        <Label text="Your choice" style="-fx-font: 18 Consolas;"/>
+        <HBox spacing="10">
+            <Label text="company" prefWidth="60"/>
+            <ComboBox fx:id="subsidiaryListBox" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        </HBox>
+        <HBox spacing="10">
+            <Label text="program" prefWidth="60"/>
+            <ComboBox fx:id="routeListBox" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        </HBox>
+        <HBox spacing="10">
+            <Label text="arrange" prefWidth="60"/>
+            <ComboBox fx:id="timePriceBox" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        </HBox>
+        <HBox spacing="10">
+            <Label text="insurance" prefWidth="60"/>
+            <ComboBox fx:id="insuranceBox" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        </HBox>
         <Button text="submit" onAction="#submit"/>
-        <Button text="back" onAction="#back"/>
-    </HBox>
+    </VBox>
 
-    <ComboBox fx:id="subsidiaryListBox" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
-    <ComboBox fx:id="routeListBox" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
-    <ComboBox fx:id="timePriceBox" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
-
-    <HBox fx:id="rButtonGroup" spacing="10" GridPane.rowIndex="6" GridPane.columnIndex="0">
-        <RadioButton fx:id="rButton1" text="Tourist accident insurance"/>
-        <RadioButton fx:id="rButton2" text="Accidental injury insurance"/>
-        <RadioButton fx:id="rButton3" text="Accommodation insurance"/>
-    </HBox>
-
-    <HBox spacing="10" GridPane.rowIndex="3" GridPane.columnIndex="0">
-        <ListView fx:id="messageListView" style="-fx-background-insets: 0;" editable="true" prefHeight="300"/>
-    </HBox>
 
 </GridPane>

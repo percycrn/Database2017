@@ -25,10 +25,7 @@ public class SelectController extends ManageClient implements Initializable {
     public ComboBox<String> subsidiaryListBox;
     public ComboBox<String> routeListBox;
     public ComboBox<String> timePriceBox;
-    public RadioButton rButton1;
-    public RadioButton rButton2;
-    public RadioButton rButton3;
-    public HBox rButtonGroup;
+    public ComboBox<String> insuranceBox;
 
     private String subsidiary_no;
     private String route_no;
@@ -48,13 +45,6 @@ public class SelectController extends ManageClient implements Initializable {
             return;
         }
         // choose insurance
-        if (rButton1.isSelected()) {
-            insurance_no = "IN001";
-        } else if (rButton2.isSelected()) {
-            insurance_no = "IN002";
-        } else if (rButton3.isSelected()) {
-            insurance_no = "IN003";
-        }
         int confirm = JOptionPane.showConfirmDialog(null, "are you sure to make this order?",
                 "Confirm", JOptionPane.YES_NO_OPTION);
         if (confirm == 0) {
@@ -93,25 +83,30 @@ public class SelectController extends ManageClient implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        rButtonGroup.setVisible(false);
         customerName.setText(customer.getCustomer_name());
         refreshMessageListView(FXCollections.observableArrayList());
         //refresh subsidiary comboBox
-        subsidiaryListBox.getItems().remove(0, subsidiaryListBox.getItems().size());
+        if (!subsidiaryListBox.getItems().isEmpty()) {
+            subsidiaryListBox.getItems().remove(0, subsidiaryListBox.getItems().size());
+        }
         subsidiaryListBox.getItems().addAll(connDB.getSubsidiaryName().split(","));
         subsidiaryListBox.valueProperty().addListener((ov1, str11, str12) -> {
             subsidiary_no = connDB.getSubsidiaryNo(subsidiaryListBox.getSelectionModel().getSelectedItem());
             System.out.println(subsidiary_no);
             refreshMessageListView(connDB.getSubsidiary(subsidiary_no));
             // refresh route comboBox
-            routeListBox.getItems().remove(0, routeListBox.getItems().size());
+            if (!routeListBox.getItems().isEmpty()) {
+                routeListBox.getItems().remove(0, routeListBox.getItems().size());
+            }
             routeListBox.getItems().addAll(connDB.getRouteName(subsidiary_no).split(","));
             routeListBox.valueProperty().addListener((ov2, str21, str22) -> {
                 route_no = connDB.getRouteNo(routeListBox.getSelectionModel().getSelectedItem());
                 System.out.println(route_no);
                 refreshMessageListView(connDB.getRoute(route_no));
                 // refresh timePrice comboBox
-                timePriceBox.getItems().remove(0, routeListBox.getItems().size());
+                if (!timePriceBox.getItems().isEmpty()) {
+                    timePriceBox.getItems().remove(0, routeListBox.getItems().size());
+                }
                 timePriceBox.getItems().addAll(connDB.getTimePriceName(route_no).split(","));
                 timePriceBox.valueProperty().addListener((ov3, str31, str32) -> {
                     String str = timePriceBox.getSelectionModel().getSelectedItem();
@@ -120,6 +115,16 @@ public class SelectController extends ManageClient implements Initializable {
                     guide_no = connDB.getGuideNo(timePrice_no);
                 });
             });
+        });
+
+        if (!insuranceBox.getItems().isEmpty()) {
+            insuranceBox.getItems().remove(0, insuranceBox.getItems().size());
+        }
+        insuranceBox.getItems().addAll(connDB.getInsuranceName());
+        insuranceBox.valueProperty().addListener((ov4, str41, str42) -> {
+            String str = insuranceBox.getSelectionModel().getSelectedItem();
+            insurance_no = str.substring(0, str.indexOf(":"));
+            System.out.println(insurance_no);
         });
     }
 
