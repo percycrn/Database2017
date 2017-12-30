@@ -1,92 +1,44 @@
 package client.data;
 
-import java.util.Date;
-
 public class Contract {
-    private int contract_no;
-    private String customer_phone;
+    private String contract_no;
+    private String customer_telNumber;
+    private String subsidiary_no;
+    private String route_no;
     private String guide_no;
-    private int route_no;
-    private int insurance_no;
-    private String route_name;
-    private String route_place;
-    private String traffic;
-    private String guide_name;
-    private Date date;
+    private String timePrice_no;
+    private String insurance_no;
 
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    private int price_travel;
-    private int price_insurance;
-
-    public String getRoute_name() {
-        return route_name;
-    }
-
-    public void setRoute_name(String route_name) {
-        this.route_name = route_name;
-    }
-
-    public String getRoute_place() {
-        return route_place;
-    }
-
-    public void setRoute_place(String route_place) {
-        this.route_place = route_place;
-    }
-
-    public String getTraffic() {
-        return traffic;
-    }
-
-    public void setTraffic(String traffic) {
-        this.traffic = traffic;
-    }
-
-    public String getGuide_name() {
-        return guide_name;
-    }
-
-    public void setGuide_name(String guide_name) {
-        this.guide_name = guide_name;
-    }
-
-    public int getPrice_travel() {
-        return price_travel;
-    }
-
-    public void setPrice_travel(int price_travel) {
-        this.price_travel = price_travel;
-    }
-
-    public int getPrice_insurance() {
-        return price_insurance;
-    }
-
-    public void setPrice_insurance(int price_insurance) {
-        this.price_insurance = price_insurance;
-    }
-
-    public int getContract_no() {
+    public String getContract_no() {
         return contract_no;
     }
 
-    public void setContract_no(int contract_no) {
+    public void setContract_no(String contract_no) {
         this.contract_no = contract_no;
     }
 
-    public String getCustomer_phone() {
-        return customer_phone;
+    public String getCustomer_telNumber() {
+        return customer_telNumber;
     }
 
-    public void setCustomer_phone(String customer_phone) {
-        this.customer_phone = customer_phone;
+    public void setCustomer_telNumber(String customer_telNumber) {
+        this.customer_telNumber = customer_telNumber;
+    }
+
+    public String getSubsidiary_no() {
+        return subsidiary_no;
+    }
+
+    public void setSubsidiary_no(String subsidiary_no) {
+        this.subsidiary_no = subsidiary_no;
+    }
+
+    public String getRoute_no() {
+        return route_no;
+    }
+
+    public void setRoute_no(String route_no) {
+        this.route_no = route_no;
     }
 
     public String getGuide_no() {
@@ -97,19 +49,19 @@ public class Contract {
         this.guide_no = guide_no;
     }
 
-    public int getRoute_no() {
-        return route_no;
+    public String getTimePrice_no() {
+        return timePrice_no;
     }
 
-    public void setRoute_no(int route_no) {
-        this.route_no = route_no;
+    public void setTimePrice_no(String timePrice_no) {
+        this.timePrice_no = timePrice_no;
     }
 
-    public int getInsurance_no() {
+    public String getInsurance_no() {
         return insurance_no;
     }
 
-    public void setInsurance_no(int insurance_no) {
+    public void setInsurance_no(String insurance_no) {
         this.insurance_no = insurance_no;
     }
 }

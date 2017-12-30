@@ -1,9 +1,9 @@
 package client.ui.signin;
 
 import client.ClientStart;
+import client.ui.manage.Manage;
 import client.ui.signup.Signup;
 import client.ui.select.Select;
-import client.util.ConnDB;
 import client.util.ManageClient;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -23,7 +23,10 @@ public class SignInController extends ManageClient implements Initializable {
     @FXML
     protected void handleSignInAction() {
         if (telNumber.getText().equals("") || password.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "输入信息不能为空");
+            JOptionPane.showMessageDialog(null, "please input correct message");
+            return;
+        } else if (telNumber.getText().length() != 11 && !telNumber.getText().equals("admin")) {
+            JOptionPane.showMessageDialog(null, "incorrect telNumber format");
             return;
         }
         try {
@@ -31,15 +34,17 @@ public class SignInController extends ManageClient implements Initializable {
                 JOptionPane.showMessageDialog(null, "account doesn't exits");
             } else if (!connDB.checkPassword(telNumber.getText(), password.getText())) {
                 JOptionPane.showMessageDialog(null, "password is incorrect");
-            } else if (telNumber.getText().equals("admin")&&password.getText().equals("admin")){
-
-            }else {
-                customer = connDB.getCustomerInfo(telNumber.getText());
-                customerInfoList.add("telephone number: " + customer.getCustomers_phone());
-                customerInfoList.add("id card: " + customer.getId_number());
-                customerInfoList.add("name: " + customer.getName());
-                customerInfoList.add("sex: " + customer.getSex());
-                customerInfoList.add("occupation: " + customer.getOccupation());
+            } else if (telNumber.getText().equals("admin") && password.getText().equals("admin")) {
+                Manage manage = new Manage();
+                try {
+                    manage.init();
+                    manage.start(ClientStart.getStage());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    System.out.println("fail to go to manage interface");
+                }
+            } else {
+                customer = connDB.getCustomer(telNumber.getText());
                 Select select = new Select();
                 select.init();
                 select.start(ClientStart.getStage());

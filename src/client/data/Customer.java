@@ -1,58 +1,49 @@
 package client.data;
 
 public class Customer {
-    private String id_number;
-    private String name;
-    private String sex;
-    private String password;
-    private String customer_phone;
-    private String occupation;
+    private String customer_telNumber;
+    private String customer_name;
+    private String customer_idCard;
+    private String customer_password;
+    private String customer_occupation;
 
-    public String getId_number() {
-        return id_number;
+    public String getCustomer_telNumber() {
+        return customer_telNumber;
     }
 
-    public void setId_number(String id_number) {
-        this.id_number = id_number;
+    public void setCustomer_telNumber(String customer_telNumber) {
+        this.customer_telNumber = customer_telNumber;
     }
 
-    public String getName() {
-        return name;
+    public String getCustomer_name() {
+        return customer_name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCustomer_name(String customer_name) {
+        this.customer_name = customer_name;
     }
 
-    public String getSex() {
-        return sex;
+    public String getCustomer_idCard() {
+        return customer_idCard;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setCustomer_idCard(String customer_idCard) {
+        this.customer_idCard = customer_idCard;
     }
 
-    public String getPassword() {
-        return password;
+    public String getCustomer_password() {
+        return customer_password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setCustomer_password(String customer_password) {
+        this.customer_password = customer_password;
     }
 
-    public String getCustomers_phone() {
-        return customer_phone;
+    public String getCustomer_occupation() {
+        return customer_occupation;
     }
 
-    public void setCustomers_phone(String customers_phone) {
-        this.customer_phone = customers_phone;
-    }
-
-    public String getOccupation() {
-        return occupation;
-    }
-
-    public void setOccupation(String occupation) {
-        this.occupation = occupation;
+    public void setCustomer_occupation(String customer_occupation) {
+        this.customer_occupation = customer_occupation;
     }
 }

@@ -6,6 +6,8 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.RadioButton?>
 <GridPane xmlns="http://javafx.com/javafx"
           xmlns:fx="http://javafx.com/fxml"
           fx:controller="client.ui.select.SelectController"
@@ -23,13 +25,21 @@
     <HBox spacing="10" GridPane.rowIndex="1" GridPane.columnIndex="0">
         <Button text="customer info" onAction="#customerInformation"/>
         <Button text="contract info" onAction="#contractInformation"/>
-        <Button text="back" onAction="#back"/>
     </HBox>
 
     <HBox spacing="10" GridPane.rowIndex="2" GridPane.columnIndex="0">
-        <ComboBox fx:id="companyList"/>
-        <ComboBox fx:id="routeList"/>
-        <Button text="more information" onAction="#showTimeAndPrice"/>
+        <Button text="submit" onAction="#submit"/>
+        <Button text="back" onAction="#back"/>
+    </HBox>
+
+    <ComboBox fx:id="subsidiaryListBox" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="routeListBox" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="timePriceBox" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+
+    <HBox fx:id="rButtonGroup" spacing="10" GridPane.rowIndex="6" GridPane.columnIndex="0">
+        <RadioButton fx:id="rButton1" text="Tourist accident insurance"/>
+        <RadioButton fx:id="rButton2" text="Accidental injury insurance"/>
+        <RadioButton fx:id="rButton3" text="Accommodation insurance"/>
     </HBox>
 
     <HBox spacing="10" GridPane.rowIndex="3" GridPane.columnIndex="0">
