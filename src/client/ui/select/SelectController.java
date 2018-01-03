@@ -61,6 +61,13 @@ public class SelectController extends ManageClient implements Initializable {
                 JOptionPane.showMessageDialog(null, "fail to add new order");
             }
         }
+        Select select = new Select();
+        try {
+            select.init();
+            select.start(ClientStart.getStage());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

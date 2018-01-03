@@ -134,13 +134,16 @@ public class ConnDB {
         try {
             ResultSet resultSet = getStatement().executeQuery(
                     "select * from route where route_no='" + route_no + "'");
-            resultSet.next();
-            ObservableList<String> routeList = FXCollections.observableArrayList();
-            routeList.add("travel program: " + resultSet.getString("route_name"));
-            routeList.add("route spot: " + getSpot(resultSet.getString("route_spot")));
-            routeList.add("average price: " + resultSet.getString("averagePrice"));
-            routeList.add("traffic: " + resultSet.getString("traffic"));
-            return routeList;
+            if (resultSet.next()) {
+                ObservableList<String> routeList = FXCollections.observableArrayList();
+                routeList.add("travel program: " + resultSet.getString("route_name"));
+                routeList.add("route spot: " + getSpot(resultSet.getString("route_spot")));
+                routeList.add("average price: " + resultSet.getString("averagePrice"));
+                routeList.add("traffic: " + resultSet.getString("traffic"));
+                return routeList;
+            } else {
+                return FXCollections.observableArrayList();
+            }
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("fail to get route information");
@@ -259,8 +262,11 @@ public class ConnDB {
         try {
             ResultSet resultSet = getStatement().executeQuery(
                     "select route_no from route where route_name='" + route_name + "'");
-            resultSet.next();
-            return resultSet.getString("route_no");
+            if (resultSet.next()) {
+                return resultSet.getString("route_no");
+            } else {
+                return "";
+            }
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("fail to get route_no");
